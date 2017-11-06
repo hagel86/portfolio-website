@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-weight: 400;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: #ffffff;
+  -webkit-text-size-adjust: 100%;
+  font: 16px/27px 'Karma', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  height: 100%;
+}
+
+.navbar-expand-lg {
+  background-color: #2A2A2A;
+  margin-left:
+}
+
+.navbar-nav {
+  margin-left: 35%;
+}
+
+.navbar.scrolled {
+  -webkit-transition: all 0.9s ease-out;
+  -moz-transition: all 0.9s ease-out;
+  -o-transition: all 0.9s ease-out;
+  -ms-transition: all 0.9s ease-out;
+  transition: all 0.9s ease-out;
+  background-color: #2A2A2A;
+}
+
+.navbar {
+  background: rgb(68, 68, 68);
+  /* IE */
+  background: rgba(0, 0, 0, 0);
+  /* NON-IE */
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  padding: 0px 20px;
+  font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 50px;
+  color: #FFFFFF;
+  border-bottom: 2px solid transparent;
+}
+
+#home-section {
+  min-height: 943px;
+  background-image: url("http://source.unsplash.com/tAKXap853rY");
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+#home-section-container {
+  padding-top: 208px;
+  color: #FFFFFF;
+  text-align: center;
+  width: 100%
+}
+
+h1, .h1 #personal-name {
+  font-size: 3.5rem;
+  font-weight: 400;
+}
+
+#personal-title-typed {
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+  border-bottom: 2px solid red;
+  transition: border-color 0.5s ease-in-out;
+}
+
+#about-section {
+  color: #777;
+  margin: 0 15%;
+  background-color: white;
+  font-size: 16px;
+  padding: 20px;
+  text-align: justify;
+  text-align-last: center;
+}
+
+@media screen and (max-width: 1000px) {
+  #about-section {
+    padding: 80px 0px;
+    margin: 0px 20px;
+  }
+  .navbar-nav {
+    margin: 0px;
+    padding: 0px 0px;
+  }
+  .navbar-nav .nav-link {
+    max-width: 20%;
+  }
+}
+
+#about-section img {
+  display: block;
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 50px;
+}
+
+#skills-section {
+  min-height: 343px;
+  background-image: url("http://source.unsplash.com/NneNzn0vs44");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+#skills-section-overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  min-height: 343px;
+  position: relative;
+  padding-bottom: 7px;
+  padding-top: 70px;
+}
+
+.skills-container {
+  padding: 0px 15px;
+  color: #FFFFFF;
+  font-size: 50px !important;
+}
+
+.skill-title {
+  padding: 25px;
+}
