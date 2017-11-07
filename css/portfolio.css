@@ -1,19 +1,32 @@
 body {
   margin: 0;
   padding: 0;
+  color: #93a4aa;
   position: relative;
   font-weight: 400;
   overflow-x: hidden;
   overflow-y: scroll;
   background-color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  font: 16px/27px 'Karma', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   height: 100%;
+}
+
+.noscroll {
+  overflow-y: hidden;
+}
+
+.hideNav {
+  visibility: hidden;
+}
+.navbar-dark .navbar-nav .nav-link.active {
+  border-bottom: 2px solid red;
+  transition: border-color 0.5s ease-in-out;
 }
 
 .navbar-expand-lg {
   background-color: #2A2A2A;
-  margin-left:
 }
 
 .navbar-nav {
@@ -51,6 +64,70 @@ body {
   border-bottom: 2px solid transparent;
 }
 
+.skills-container {
+  padding: 0px 15px;
+  color: #FFFFFF;
+  font-size: 50px !important;
+}
+
+.skill-title {
+  padding: 25px;
+}
+
+.project-title {
+  color: #252a30;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.project-tags {
+  list-style: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 1em;
+  text-transform: uppercase;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+.project-tags li::before {
+  content: "•";
+  color: #E14D43;
+}
+
+.project-description{
+  margin-bottom: 30px;
+}
+
+.websiteButton {
+  display: inline-block;
+  text-align: center;
+  height: auto;
+  width: 10em;
+  line-height: 2.6rem;
+  border-radius: 5em;
+  color: #E14D43;
+  border: 2px solid #E14D43;
+  white-space: nowrap;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition: color 0.2s 0.3s, background-color 0.3s ease-in-out, width 0.3s 0s;
+  transition: color 0.2s 0.3s, background-color 0.3s ease-in-out, width 0.3s 0s;
+  -webkit-appearance: none !important;
+}
+
+.websiteButton:hover {
+  background-color: #E14D43;
+  color: #FFFFFF;
+  width: 12.5em;
+  text-decoration: none;
+}
+
 #home-section {
   min-height: 943px;
   background-image: url("http://source.unsplash.com/tAKXap853rY");
@@ -80,33 +157,16 @@ h1, .h1 #personal-name {
   font-weight: 300;
 }
 
-.navbar-dark .navbar-nav .nav-link.active {
-  border-bottom: 2px solid red;
-  transition: border-color 0.5s ease-in-out;
-}
-
 #about-section {
-  color: #777;
   margin: 0 15%;
   background-color: white;
   font-size: 16px;
-  padding: 20px;
   text-align: justify;
   text-align-last: center;
 }
 
-@media screen and (max-width: 1000px) {
-  #about-section {
-    padding: 80px 0px;
-    margin: 0px 20px;
-  }
-  .navbar-nav {
-    margin: 0px;
-    padding: 0px 0px;
-  }
-  .navbar-nav .nav-link {
-    max-width: 20%;
-  }
+#projects-section, #about-section, #contact-section{
+  padding: 100px 8%;
 }
 
 #about-section img {
@@ -140,12 +200,314 @@ h1, .h1 #personal-name {
   padding-top: 70px;
 }
 
-.skills-container {
-  padding: 0px 15px;
-  color: #FFFFFF;
-  font-size: 50px !important;
+#contact-section {
+  background-color: #eee;
+  text-align: center;
+  color: #000000;
 }
 
-.skill-title {
-  padding: 25px;
+#contact-intro {
+  font-size: 2.7em;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+/*MODAL SETUP*/
+.cd-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: visibility 0s 0.3s, opacity 0.3s 0s, z-index 0s 0.3s;
+    transition: visibility 0s 0.3s, opacity 0.3s 0s, z-index 0s 0.3s
+}
+
+.cd-modal::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    pointer-events: none;
+    background: transparent
+}
+
+.cd-modal .cd-modal-content {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.cd-modal .cd-modal-content .contact-header {
+    padding: 50px 0 40px
+}
+
+.cd-modal .cd-modal-content a.logo {
+    background-image: url(../images/logomark.svg);
+    background-size: 100%;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    text-indent: -99999px;
+    opacity: 1;
+    margin: 0 auto;
+    text-align: center;
+    border: 0
+}
+
+
+.cd-modal .container .cd-modal-content {
+    padding-top: 70px;
+    font-size: 1.4rem;
+    color: rgba(255,255,255,0.7)
+}
+
+.cd-modal .cd-modal-content {
+    margin-bottom: 0;
+
+}
+
+.cd-modal .cd-modal-content .form-container {
+    margin: 0 auto;
+    padding: 44px 0 40px 0;
+    width: 95%
+}
+
+.cd-modal .cd-modal-content .form-container form input[type=text],.cd-modal .cd-modal-content .form-container form input[type=email] {
+    margin-bottom: 32px;
+    font-size: 1.3rem;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff
+}
+
+.cd-modal .cd-modal-content .form-container form textarea {
+    font-size: 1.3rem;
+    min-height: 176px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff
+}
+
+.cd-modal .cd-modal-content .form-container form input[type=submit] {
+    border: 2px solid #FED766;
+    background: transparent;
+    color: #fff;
+    margin-top: 30px
+}
+
+.cd-modal .cd-modal-content .form-container form input[type=submit]:hover {
+    background-color: #FED766;
+    border: 2px solid #FED766;
+    color: #252a30
+}
+
+@media screen and (min-width: 750px) {
+    .cd-modal .cd-modal-content a.logo {
+        width:70px;
+        height: 70px
+    }
+}
+
+@media (min-width: 750px) {
+    .cd-modal .cd-modal-content p.statement {
+        font-size:1.75rem
+    }
+}
+
+@media (min-width: 750px) {
+    .cd-modal .cd-modal-content .form-container {
+        width:80%
+    }
+}
+
+@media (min-width: 1000px) {
+    .cd-modal .cd-modal-content .form-container {
+        margin:0 auto;
+        padding: 50px 0;
+        width: 50%
+    }
+}
+
+::-webkit-input-placeholder {
+    color: rgba(255,255,255,0.7)
+}
+
+:-moz-placeholder {
+    color: rgba(255,255,255,0.7)
+}
+
+::-moz-placeholder {
+    color: rgba(255,255,255,0.7)
+}
+
+:-ms-input-placeholder {
+    color: rgba(255,255,255,0.7)
+}
+
+.cd-modal .cd-modal-content p.required {
+    font-size: 1.3rem;
+    margin-top: 12px;
+    color: rgba(255,255,255,0.7)
+}
+
+.modal-is-visible .cd-modal {
+    z-index: 1;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    -webkit-transition: visibility 0s 0s, opacity 0.3s 0s, z-index 0s 0s;
+    transition: visibility 0s 0s, opacity 0.3s 0s, z-index 0s 0s
+}
+
+.modal-is-visible .cd-modal .cd-modal-content {
+    -webkit-overflow-scrolling: touch
+}
+
+.cd-modal-action {
+    position: relative
+}
+
+.cd-modal-action .cd-modal-bg {
+    display: inline-block;
+    height: 4em;
+    background-color: #252a30
+}
+
+.cd-modal-action .btn {
+    display: inline-block;
+    height: auto;
+    width: 10em;
+    line-height: 2.6rem;
+    border-radius: 5em;
+    color: #E14D43;
+    border: 2px solid #E14D43;
+    white-space: nowrap;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #FFFFFF;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition: color 0.2s 0.3s, background-color 0.3s ease-in-out, width 0.3s 0s;
+    transition: color 0.2s 0.3s, background-color 0.3s ease-in-out, width 0.3s 0s;
+}
+
+.cd-modal-action .btn:hover {
+    background-color: #E14D43;
+    color: #FFFFFF;
+    width: 12.5em;
+}
+
+.cd-modal-action .btn.to-circle {
+    width: 4em;
+    color: transparent;
+    -webkit-transition: color 0.2s 0s, background-color 0.3s ease-in-out, width 0.3s 0.2s;
+    transition: color 0.2s 0s, background-color 0.3s ease-in-out, width 0.3s 0.2s
+}
+
+.cd-modal-action .cd-modal-bg {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 0;
+    width: 4em;
+    border-radius: 50%;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transform: translateX(-2em);
+    transform: translateX(-2em);
+    -webkit-transition: visibility 0s 0.5s;
+    transition: visibility 0s 0.5s
+}
+
+.cd-modal-action .cd-modal-bg.is-visible {
+    opacity: 1;
+    visibility: visible
+}
+
+@media screen and (min-width: 550px) {
+    .cd-modal-action .btn {
+        font-size:1.4rem;
+        line-height: 2.6rem;
+    }
+}
+
+.cd-modal-close {
+    position: fixed;
+    z-index: 1;
+    top: 20px;
+    right: 5%;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.3) url(../images/cd-icon-close.svg) no-repeat center center;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: -webkit-transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
+    -webkit-transition: visibility 0s 0.3s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
+    transition: visibility 0s 0.3s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
+    transition: transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
+    transition: transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s, -webkit-transform 0.3s 0s
+}
+
+.no-touch .cd-modal-close:hover {
+    background-color: rgba(0,0,0,0.5)
+}
+
+.modal-is-visible .cd-modal-close {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: -webkit-transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s;
+    -webkit-transition: visibility 0s 0s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
+    transition: visibility 0s 0s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
+    transition: transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s;
+    transition: transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s, -webkit-transform 0.3s 0s;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+}
+
+@media only screen and (min-width: 768px) {
+    .cd-modal-close {
+        top:50px
+    }
+}
+
+/*MOBILE CONFIGURATION*/
+@media screen and (max-width: 1000px) {
+  #about-section {
+    padding: 80px 0px;
+    margin: 0px 20px;
+  }
+  #projects-section {
+    padding: 80px 0px;
+    margin: 0px 20px;
+  }
+  .navbar-nav {
+    margin: 0px;
+    padding: 0px 0px;
+  }
+  .navbar-nav .nav-link {
+    max-width: 20%;
+  }
+  .project-details{
+    text-align: center;
+  }
 }
