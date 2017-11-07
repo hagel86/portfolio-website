@@ -110,7 +110,7 @@ if ($('.navbar').length > 0) {
 Personal Title Typed
 ========================================================================== */
 var typed = new Typed("#personal-title-typed", {
-  strings: ['I\'m a Full-Stack Web Developer'],
+  strings: ['Full-Stack Developer, Front-end Developer and Creative thinker'],
   typeSpeed: 60,
   backSpeed: 50,
   backDelay: 500,

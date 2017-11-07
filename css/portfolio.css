@@ -99,7 +99,7 @@ body {
   margin-bottom: 30px;
 }
 
-.websiteButton {
+.styledButton {
   display: inline-block;
   text-align: center;
   height: auto;
@@ -121,11 +121,15 @@ body {
   -webkit-appearance: none !important;
 }
 
-.websiteButton:hover {
-  background-color: #E14D43;
+.styledButton:hover {
+  background-color: #E14D43 !important;
   color: #FFFFFF;
   width: 12.5em;
   text-decoration: none;
+}
+
+.styledButton:focus {
+  outline: 0;
 }
 
 #home-section {
@@ -221,6 +225,8 @@ h1, .h1 #personal-name {
     height: 100%;
     visibility: hidden;
     opacity: 0;
+    overflow-y: visible;
+    overflow-x: hidden;
     pointer-events: none;
     -webkit-transition: visibility 0s 0.3s, opacity 0.3s 0s, z-index 0s 0.3s;
     transition: visibility 0s 0.3s, opacity 0.3s 0s, z-index 0s 0.3s
@@ -240,7 +246,6 @@ h1, .h1 #personal-name {
 .cd-modal .cd-modal-content {
     height: 100%;
     width: 100%;
-    overflow-y: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale
 }
@@ -250,7 +255,6 @@ h1, .h1 #personal-name {
 }
 
 .cd-modal .cd-modal-content a.logo {
-    background-image: url(../images/logomark.svg);
     background-size: 100%;
     display: inline-block;
     width: 60px;
@@ -297,16 +301,13 @@ h1, .h1 #personal-name {
 }
 
 .cd-modal .cd-modal-content .form-container form input[type=submit] {
-    border: 2px solid #FED766;
-    background: transparent;
-    color: #fff;
-    margin-top: 30px
+    width: 17em;
+    margin-top: 30px;
+    background-color: transparent;
 }
 
 .cd-modal .cd-modal-content .form-container form input[type=submit]:hover {
-    background-color: #FED766;
-    border: 2px solid #FED766;
-    color: #252a30
+    width: 20em;
 }
 
 @media screen and (min-width: 750px) {
@@ -353,7 +354,7 @@ h1, .h1 #personal-name {
 }
 
 .cd-modal .cd-modal-content p.required {
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin-top: 12px;
     color: rgba(255,255,255,0.7)
 }
@@ -372,7 +373,8 @@ h1, .h1 #personal-name {
 }
 
 .cd-modal-action {
-    position: relative
+    position: relative;
+    margin-top: 40px;
 }
 
 .cd-modal-action .cd-modal-bg {
@@ -405,6 +407,11 @@ h1, .h1 #personal-name {
     background-color: #E14D43;
     color: #FFFFFF;
     width: 12.5em;
+    outline: 0;
+}
+
+.cd-modal-action .btn:focus {
+  outline: 0;
 }
 
 .cd-modal-action .btn.to-circle {
@@ -451,7 +458,7 @@ h1, .h1 #personal-name {
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    background: rgba(0,0,0,0.3) url(../images/cd-icon-close.svg) no-repeat center center;
+    background: rgba(255,77,67,0.7) url(../images/cd-icon-close.svg) no-repeat center center;
     overflow: hidden;
     text-indent: 100%;
     white-space: nowrap;
@@ -488,6 +495,17 @@ h1, .h1 #personal-name {
     .cd-modal-close {
         top:50px
     }
+}
+
+.cd-modal-header {
+  color: #FFFFFF;
+  font-size: 32px;
+}
+
+.cd-modal-statement {
+  padding-top: 15px;
+  color: rgba(255,255,255,0.7);
+  font-size: 16px;
 }
 
 /*MOBILE CONFIGURATION*/
